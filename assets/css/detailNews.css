@@ -1,0 +1,426 @@
+/* assets/css/detailNews.css */
+
+/* ================== */
+/* Basic Setup & Video Background (Konsisten dengan halaman lain) */
+/* ================== */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #080a0f;
+  color: #e0e0e0;
+  margin: 0;
+  padding-top: 80px;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#background-video-detail-news {
+  /* ID unik jika perlu video berbeda, atau gunakan ID global */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center center;
+  z-index: -10;
+  filter: brightness(0.25); /* Lebih gelap agar fokus ke teks artikel */
+}
+
+/* ================== */
+/* Navbar Styling (Idealnya dari file CSS umum) */
+/* ================== */
+.navbar {
+  background-color: rgba(15, 20, 30, 0.75) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.navbar .navbar-brand .logo-img {
+  height: 40px;
+}
+.navbar #navSearchFormGlobal .form-control {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  width: 300px;
+}
+.navbar #navSearchFormGlobal .form-control::placeholder {
+  color: #a0a8b0;
+}
+.navbar #navSearchFormGlobal .bi-search {
+  color: #a0a8b0;
+}
+.navbar .navbar-nav .nav-link {
+  color: #d0d8e0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  margin: 0 0.35rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+.navbar .navbar-nav .nav-link:hover {
+  color: #fff;
+  background-color: rgba(0, 209, 255, 0.15);
+}
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .show > .nav-link {
+  color: #080a0f;
+  background-color: #00d1ff;
+}
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28200, 208, 224, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ================== */
+/* Detail News Page Specific Content Styling */
+/* ================== */
+.detail-news-page-content {
+  position: relative;
+  z-index: 1;
+  flex-grow: 1;
+  padding-bottom: 3rem;
+}
+
+.news-article-wrapper {
+  background-color: rgba(18, 22, 33, 0.7); /* Efek glassmorphism halus */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(120, 150, 180, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.breadcrumb-futuristic .breadcrumb-item a {
+  color: #00d1ff;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+.breadcrumb-futuristic .breadcrumb-item a:hover {
+  color: #ffffff;
+}
+.breadcrumb-futuristic .breadcrumb-item.active {
+  color: #808a96;
+  font-size: 0.85rem;
+}
+.breadcrumb-futuristic .breadcrumb-item + .breadcrumb-item::before {
+  color: #808a96; /* Warna separator breadcrumb */
+}
+
+.article-header .article-title {
+  font-family: "Bebas Neue", sans-serif;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.article-meta {
+  font-size: 0.8rem;
+  color: #a0a8b0 !important; /* Override text-muted bootstrap jika perlu */
+}
+.article-meta .meta-item i {
+  color: #00d1ff; /* Warna aksen untuk ikon meta */
+}
+
+.article-featured-image img {
+  border: 1px solid rgba(120, 150, 180, 0.15);
+  /* Tidak perlu max-height agar gambar bisa full width kolomnya */
+  object-fit: cover; /* atau contain, sesuai preferensi */
+  width: 100%;
+}
+.image-caption-detail {
+  font-size: 0.75rem;
+  color: #808a96;
+  font-style: italic;
+}
+
+.article-content {
+  font-size: 1rem; /* Ukuran font dasar untuk konten artikel */
+  line-height: 1.8;
+  color: #d0d8e0; /* Warna teks yang nyaman dibaca */
+}
+.article-content p {
+  margin-bottom: 1.25rem;
+}
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+  font-family: "Bebas Neue", sans-serif;
+  color: #ffffff;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+.article-content h2.content-subheading, /* Jika pakai class khusus */
+.article-content h3.content-subheading {
+  font-size: 1.8rem; /* Ukuran subheading */
+  color: #e0e0e0;
+  border-bottom: 1px solid rgba(120, 150, 180, 0.2);
+  padding-bottom: 0.5rem;
+}
+.article-content .content-subheading {
+  /* Untuk class h3 yang saya buat di HTML contoh */
+  font-size: 1.8rem;
+  color: #e0e0e0;
+  border-bottom: 1px solid rgba(120, 150, 180, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.article-content a {
+  /* Link di dalam konten artikel */
+  color: #00d1ff;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(0, 209, 255, 0.5);
+}
+.article-content a:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.futuristic-blockquote {
+  border-left: 3px solid #00d1ff;
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #a0a8b0;
+}
+.futuristic-blockquote .blockquote-footer {
+  color: #808a96;
+  font-size: 0.85rem;
+  font-style: normal;
+}
+
+.content-list {
+  /* Untuk ul/ol di dalam konten */
+  list-style: none;
+  padding-left: 0;
+}
+.content-list li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+.content-list li::before {
+  content: "\F287"; /* Bootstrap Icons: dot atau bisa diganti chevron-right dll. */
+  font-family: "bootstrap-icons";
+  color: #00d1ff;
+  position: absolute;
+  left: 0;
+  top: 1px; /* Sesuaikan alignment vertikal ikon */
+}
+
+.article-divider {
+  border-color: rgba(120, 150, 180, 0.2);
+}
+
+.article-tags .tags-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.1rem;
+  color: #a0a8b0;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.article-tags .tag-link {
+  display: inline-block;
+  background-color: rgba(0, 209, 255, 0.1);
+  color: #00d1ff;
+  padding: 0.25rem 0.75rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 15px; /* rounded-pill */
+  font-size: 0.75rem;
+  text-decoration: none;
+  border: 1px solid rgba(0, 209, 255, 0.2);
+  transition: all 0.3s ease;
+}
+.article-tags .tag-link:hover {
+  background-color: rgba(0, 209, 255, 0.25);
+  color: #ffffff;
+  border-color: rgba(0, 209, 255, 0.5);
+}
+
+/* Styling untuk bagian komentar bisa disalin dari detailLaunches.css jika ingin sama persis */
+.article-comments .section-title {
+  /* Untuk "Article Comments" */
+  font-family: "Bebas Neue", sans-serif;
+  color: #00d1ff;
+  letter-spacing: 1px;
+}
+
+/* ================== */
+/* Footer Styling (Idealnya dari file CSS umum) */
+/* ================== */
+.footer {
+  background-color: rgba(10, 10, 15, 0.75);
+  color: #a0a8b0;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  border-top: 1px solid rgba(120, 150, 180, 0.15);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  position: relative;
+  z-index: 1;
+}
+.footer p,
+.footer .list-unstyled a {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+}
+.footer .footer-logos-container img.footer-logo-main {
+  max-width: 150px;
+  margin: 0 5px;
+}
+.footer .footer-logos-container img.footer-logo-km {
+  max-width: 80px;
+  margin: 0 5px;
+}
+.footer p.footer-description-text {
+  max-width: 400px;
+  color: #b0b8c0 !important;
+  font-size: 0.8rem;
+}
+.footer .footer-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: normal;
+  color: #e0e0e0 !important;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem !important;
+}
+.social-icons-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.social-icons-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.social-icons-row:last-child {
+  margin-bottom: 0;
+}
+.social-icons-row a i.bi {
+  color: #b0b8c0 !important;
+  transition: color 0.3s ease;
+  font-size: 1.3rem !important;
+}
+.social-icons-row a:hover i.bi {
+  color: #00d1ff !important;
+}
+.listfoot ul {
+  padding-left: 0;
+}
+.listfoot li {
+  margin-bottom: 0.4rem;
+}
+.listfoot a {
+  font-family: "Bebas Neue", sans-serif;
+  color: #b0b8c0 !important;
+  transition: color 0.3s ease;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  padding: 0.2rem 0;
+  display: inline-block;
+}
+.listfoot a:hover {
+  color: #00d1ff !important;
+}
+.footer small.footer-copyright-text {
+  color: #88929b;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  font-family: "Inter", sans-serif;
+}
+
+/* ================== */
+/* Responsive Adjustments */
+/* ================== */
+@media (max-width: 991.98px) {
+  .navbar #navSearchFormGlobal {
+    max-width: 300px;
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .navbar #navSearchFormGlobal .form-control {
+    width: 100%;
+  }
+  .navbar .navbar-nav {
+    align-items: center;
+  }
+  .navbar .navbar-nav .nav-item {
+    margin: 0.25rem 0;
+  }
+
+  .news-article-wrapper {
+    padding: 1.5rem 2rem;
+  }
+  .article-header .article-title {
+    font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+  .news-article-wrapper {
+    padding: 1.5rem;
+  }
+  .article-header .article-title {
+    font-size: 2rem;
+  }
+  .article-meta {
+    font-size: 0.75rem;
+  }
+  .article-meta .meta-item.ms-3 {
+    margin-left: 0.5rem !important;
+  } /* Kurangi jarak meta item */
+  .article-meta .meta-item {
+    display: block;
+    margin-bottom: 0.25rem;
+  } /* Meta item jadi per baris */
+  .article-content {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  .article-content h3.content-subheading,
+  .article-content h2.content-subheading {
+    font-size: 1.6rem;
+  }
+  .futuristic-blockquote {
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .article-header .article-title {
+    font-size: 1.8rem;
+  }
+  .news-article-wrapper {
+    padding: 1rem 1.25rem;
+  }
+  .article-content {
+    font-size: 0.9rem;
+  }
+  .article-content h3.content-subheading,
+  .article-content h2.content-subheading {
+    font-size: 1.4rem;
+  }
+}
