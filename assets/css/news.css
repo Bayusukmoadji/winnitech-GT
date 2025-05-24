@@ -120,6 +120,15 @@ body {
   line-clamp: 3;
 }
 
+.deskripsigrid {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: box;
+  line-clamp: 3;
+  font-size: small;
+}
 .card:hover .card-img-top {
   transform: scale(1.07);
 }
