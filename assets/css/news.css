@@ -90,7 +90,7 @@ body {
 /* ================== */
 
 /* ================== */
-/* Styling Konten Utama (News Page) */
+/* Styling Konten */
 /* ================== */
 .object-fit-cover {
   object-fit: cover;
@@ -136,16 +136,18 @@ body {
 
 .card-text.fw-semibold {
   display: -webkit-box;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .deskripsigrid {
   display: -webkit-box;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 0.85rem;
@@ -208,18 +210,16 @@ body {
 /* ================================= */
 #heroCarousel .carousel-control-prev,
 #heroCarousel .carousel-control-next {
-  background: none; /* Hapus background default pada pembungkus */
-  opacity: 0.6; /* Atur opasitas default agar ikon terlihat */
-  transition: opacity 0.2s ease; /* Transisi untuk opasitas */
+  background: none;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
 }
 
 #heroCarousel .carousel-control-prev:hover,
 #heroCarousel .carousel-control-next:hover {
-  /* background-color: rgba(0, 209, 255, 0.3); */ /* DIHAPUS: Latar belakang biru pada pembungkus */
-  opacity: 1; /* Tingkatkan opasitas pembungkus saat hover agar ikon lebih jelas */
+  opacity: 1;
 }
 
-/* Mengubah warna ikon panah menjadi biru (#00d1ff) saat tombol di-hover */
 #heroCarousel .carousel-control-prev:hover .carousel-control-prev-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2300d1ff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
 }
@@ -238,7 +238,6 @@ a {
 /* content Styling end */
 /* ================== */
 
-/* === STYLING KUSTOM UNTUK TOMBOL LOAD MORE === */
 #loadMoreButton.btn.btn-outline-light,
 #loadMoreButton.btn.btn-outline-light:focus:not(:hover),
 #loadMoreButton.btn.btn-outline-light.focus:not(:hover),
@@ -264,7 +263,6 @@ a {
 #loadMoreButton.btn.btn-outline-light {
   transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
-/* === AKHIR STYLING KUSTOM UNTUK TOMBOL LOAD MORE === */
 
 /* ================== */
 /* Footer Styling */
@@ -386,7 +384,11 @@ a {
   #heroCarousel .card-img-overlay .h5 {
     font-size: 1.2rem;
     line-height: 1.3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
+    line-clamp: 4;
+    overflow: hidden;
   }
 }
 
@@ -399,7 +401,11 @@ a {
   }
   #heroCarousel .card-img-overlay .h5 {
     font-size: 1rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
   }
   #heroCarousel .card-img-overlay .small {
     font-size: 0.7rem;
@@ -418,10 +424,12 @@ a {
   .card-text.fw-semibold {
     font-size: 0.9rem;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
   .deskripsigrid {
     font-size: 0.8rem;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
 }
 
@@ -429,8 +437,13 @@ a {
   #heroCarousel .card-img-overlay .h5 {
     font-size: 0.9rem;
     line-height: 1.2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
   }
+
   #heroCarousel .card-img-overlay .small {
     font-size: 0.65rem;
   }
