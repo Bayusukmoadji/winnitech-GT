@@ -1,7 +1,5 @@
-/* assets/css/detailNews.css */
-
 /* ================== */
-/* Basic Setup & Video Background (Konsisten dengan halaman lain) */
+/* Basic Setup & Video Background */
 /* ================== */
 body {
   font-family: "Inter", sans-serif;
@@ -17,7 +15,6 @@ body {
 }
 
 #background-video-detail-news {
-  /* ID unik jika perlu video berbeda, atau gunakan ID global */
   position: fixed;
   top: 0;
   left: 0;
@@ -26,12 +23,21 @@ body {
   object-fit: cover;
   object-position: center center;
   z-index: -10;
-  filter: brightness(0.25); /* Lebih gelap agar fokus ke teks artikel */
+  filter: brightness(0.25);
 }
 
 /* ================== */
-/* Navbar Styling (Idealnya dari file CSS umum) */
+/* Navbar Styling */
 /* ================== */
+
+.search-highlight {
+  background-color: #00d1ff;
+  color: black;
+  border-radius: 3px;
+  padding: 0.1em 0.2em;
+  font-weight: bold;
+}
+
 .navbar {
   background-color: rgba(15, 20, 30, 0.75) !important;
   backdrop-filter: blur(10px);
@@ -92,29 +98,13 @@ body {
 }
 
 .news-article-wrapper {
-  background-color: rgba(18, 22, 33, 0.7); /* Efek glassmorphism halus */
+  background-color: rgba(18, 22, 33, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 2rem 2.5rem;
   border-radius: 12px;
   border: 1px solid rgba(120, 150, 180, 0.2);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-.breadcrumb-futuristic .breadcrumb-item a {
-  color: #00d1ff;
-  text-decoration: none;
-  font-size: 0.85rem;
-}
-.breadcrumb-futuristic .breadcrumb-item a:hover {
-  color: #ffffff;
-}
-.breadcrumb-futuristic .breadcrumb-item.active {
-  color: #808a96;
-  font-size: 0.85rem;
-}
-.breadcrumb-futuristic .breadcrumb-item + .breadcrumb-item::before {
-  color: #808a96; /* Warna separator breadcrumb */
 }
 
 .article-header .article-title {
@@ -127,16 +117,15 @@ body {
 
 .article-meta {
   font-size: 0.8rem;
-  color: #a0a8b0 !important; /* Override text-muted bootstrap jika perlu */
+  color: #a0a8b0 !important;
 }
 .article-meta .meta-item i {
-  color: #00d1ff; /* Warna aksen untuk ikon meta */
+  color: #00d1ff;
 }
 
 .article-featured-image img {
   border: 1px solid rgba(120, 150, 180, 0.15);
-  /* Tidak perlu max-height agar gambar bisa full width kolomnya */
-  object-fit: cover; /* atau contain, sesuai preferensi */
+  object-fit: cover;
   width: 100%;
 }
 .image-caption-detail {
@@ -146,9 +135,9 @@ body {
 }
 
 .article-content {
-  font-size: 1rem; /* Ukuran font dasar untuk konten artikel */
+  font-size: 1rem;
   line-height: 1.8;
-  color: #d0d8e0; /* Warna teks yang nyaman dibaca */
+  color: #d0d8e0;
 }
 .article-content p {
   margin-bottom: 1.25rem;
@@ -162,15 +151,14 @@ body {
   margin-bottom: 1rem;
   letter-spacing: 0.5px;
 }
-.article-content h2.content-subheading, /* Jika pakai class khusus */
+.article-content h2.content-subheading,
 .article-content h3.content-subheading {
-  font-size: 1.8rem; /* Ukuran subheading */
+  font-size: 1.8rem;
   color: #e0e0e0;
   border-bottom: 1px solid rgba(120, 150, 180, 0.2);
   padding-bottom: 0.5rem;
 }
 .article-content .content-subheading {
-  /* Untuk class h3 yang saya buat di HTML contoh */
   font-size: 1.8rem;
   color: #e0e0e0;
   border-bottom: 1px solid rgba(120, 150, 180, 0.2);
@@ -178,7 +166,6 @@ body {
 }
 
 .article-content a {
-  /* Link di dalam konten artikel */
   color: #00d1ff;
   text-decoration: none;
   border-bottom: 1px dotted rgba(0, 209, 255, 0.5);
@@ -202,57 +189,57 @@ body {
   font-style: normal;
 }
 
-.content-list {
-  /* Untuk ul/ol di dalam konten */
-  list-style: none;
-  padding-left: 0;
-}
-.content-list li {
-  padding-left: 1.5rem;
-  position: relative;
-  margin-bottom: 0.5rem;
-}
-.content-list li::before {
-  content: "\F287"; /* Bootstrap Icons: dot atau bisa diganti chevron-right dll. */
-  font-family: "bootstrap-icons";
-  color: #00d1ff;
-  position: absolute;
-  left: 0;
-  top: 1px; /* Sesuaikan alignment vertikal ikon */
-}
-
 .article-divider {
   border-color: rgba(120, 150, 180, 0.2);
 }
 
-.article-tags .tags-title {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 1.1rem;
-  color: #a0a8b0;
-  margin-bottom: 0.5rem;
-  display: inline-block;
-  margin-right: 0.5rem;
-}
-.article-tags .tag-link {
-  display: inline-block;
-  background-color: rgba(0, 209, 255, 0.1);
-  color: #00d1ff;
-  padding: 0.25rem 0.75rem;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 15px; /* rounded-pill */
-  font-size: 0.75rem;
-  text-decoration: none;
-  border: 1px solid rgba(0, 209, 255, 0.2);
+/* ================================================ */
+/* Tombol Kustom (Digunakan di bagian komentar)    */
+/* ================================================ */
+.btn-primary-themed {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  padding: 0.7rem 1.8rem;
+  border-radius: 25px;
   transition: all 0.3s ease;
+  border-width: 1px;
+  border-style: solid;
+  text-decoration: none;
+  font-size: 1rem;
+  background-color: #00d1ff;
+  border-color: #00d1ff;
+  color: #080a0f;
 }
-.article-tags .tag-link:hover {
-  background-color: rgba(0, 209, 255, 0.25);
+.btn-primary-themed:hover {
+  background-color: #00a8cc;
+  border-color: #00a8cc;
+  color: #080a0f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 209, 255, 0.3);
+}
+.btn-secondary-themed {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  border-width: 1px;
+  border-style: solid;
+  text-decoration: none;
+  font-size: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #e0e0e0;
+}
+.btn-secondary-themed:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
   color: #ffffff;
-  border-color: rgba(0, 209, 255, 0.5);
 }
 
-/* Styling untuk bagian komentar bisa disalin dari detailLaunches.css jika ingin sama persis */
+/* ================================================ */
+/* STYLING UNTUK BAGIAN KOMENTAR DAN INTERAKSI BALASAN */
+/* ================================================ */
 .article-comments .section-title {
   /* Untuk "Article Comments" */
   font-family: "Bebas Neue", sans-serif;
@@ -260,8 +247,154 @@ body {
   letter-spacing: 1px;
 }
 
+.comments-container {
+  max-width: 800px;
+}
+
+.comments-list-title {
+  font-family: "Bebas Neue", sans-serif;
+  color: #00d1ff;
+  letter-spacing: 1px;
+  font-size: 1.6rem;
+  text-align: left;
+}
+
+.comment-form-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #e0e0e0;
+  font-size: 1.3rem;
+}
+
+.comment-form-wrapper {
+  background-color: rgba(20, 25, 45, 0.6);
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(120, 150, 180, 0.15);
+}
+
+.form-control-futuristic {
+  background-color: rgba(8, 10, 15, 0.7) !important;
+  border: 1px solid rgba(120, 150, 180, 0.3) !important;
+  color: #e0e0e0 !important;
+  border-radius: 6px !important;
+  padding: 0.5rem 0.75rem !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+}
+.form-control-futuristic::placeholder {
+  color: #707880 !important;
+  opacity: 1;
+}
+.form-control-futuristic:focus {
+  background-color: rgba(8, 10, 15, 0.9) !important;
+  border-color: #00d1ff !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 209, 255, 0.25) !important;
+  color: #ffffff !important;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #a0a8b0;
+  margin-bottom: 0.3rem;
+}
+
+.comments-list .comment-item {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(20, 25, 45, 0.5);
+  border: 1px solid rgba(120, 150, 180, 0.1);
+  border-radius: 8px;
+}
+
+.comment-content {
+  width: 100%;
+}
+
+.comment-header {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.commenter-name {
+  font-weight: 600;
+  color: #00d1ff;
+  font-size: 0.95rem;
+}
+
+.comment-timestamp {
+  font-size: 0.75rem;
+  color: #808a96;
+}
+
+.comment-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #c5cdd3;
+  margin-bottom: 0;
+}
+
+.reply-button {
+  color: #a0a8b0;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.4rem;
+  background-color: transparent;
+  border: none;
+}
+.reply-button:hover,
+.reply-button:focus {
+  color: #00d1ff;
+  text-decoration: none;
+  box-shadow: none !important;
+  background-color: transparent;
+}
+.reply-button i {
+  font-size: 0.9em;
+}
+
+.reply-form-container {
+  background-color: rgba(25, 33, 50, 0.7);
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(120, 150, 180, 0.1);
+}
+
+.reply-form-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #c5cdd3;
+}
+
+.reply-form .form-control-sm.form-control-futuristic {
+  font-size: 0.8rem !important;
+  padding: 0.4rem 0.6rem !important;
+}
+
+.reply-form .btn-sm {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.8rem;
+}
+
+.comment-replies {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+  border-left: 2px solid rgba(0, 209, 255, 0.15);
+}
+
+.comment-replies .comment-item {
+  background-color: rgba(25, 30, 50, 0.4);
+  padding: 0.75rem;
+}
+
 /* ================== */
-/* Footer Styling (Idealnya dari file CSS umum) */
+/* Footer Styling */
 /* ================== */
 .footer {
   background-color: rgba(10, 10, 15, 0.75);
@@ -390,11 +523,11 @@ body {
   }
   .article-meta .meta-item.ms-3 {
     margin-left: 0.5rem !important;
-  } /* Kurangi jarak meta item */
+  }
   .article-meta .meta-item {
     display: block;
     margin-bottom: 0.25rem;
-  } /* Meta item jadi per baris */
+  }
   .article-content {
     font-size: 0.95rem;
     line-height: 1.7;
@@ -406,6 +539,51 @@ body {
   .futuristic-blockquote {
     font-size: 1rem;
     padding-left: 1rem;
+  }
+
+  .comment-form-wrapper {
+    padding: 1.5rem;
+  }
+  .comments-list-title {
+    font-size: 1.4rem;
+  }
+  .comment-form-title {
+    font-size: 1.1rem;
+  }
+  .comments-list .comment-item,
+  .comment-replies .comment-item {
+    padding: 0.75rem;
+  }
+  .commenter-name {
+    font-size: 0.9rem;
+  }
+  .comment-timestamp {
+    font-size: 0.7rem;
+    margin-top: 0.25rem;
+  }
+  .comment-text {
+    font-size: 0.85rem;
+  }
+  .reply-button {
+    font-size: 0.75rem;
+  }
+  .reply-form-container {
+    padding: 0.75rem;
+  }
+  .reply-form-title {
+    font-size: 0.85rem;
+  }
+  .comment-replies {
+    padding-left: 1rem;
+  }
+  .btn-primary-themed.btn-sm,
+  .reply-form .btn-sm {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+  .btn-secondary-themed.btn-sm {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
   }
 }
 
@@ -422,5 +600,40 @@ body {
   .article-content h3.content-subheading,
   .article-content h2.content-subheading {
     font-size: 1.4rem;
+  }
+
+  .comment-form-wrapper {
+    padding: 1rem;
+  }
+  .comment-form-wrapper .mb-3 {
+    margin-bottom: 0.75rem !important;
+  }
+  .comment-form-title {
+    font-size: 1rem;
+  }
+  .comments-list-title {
+    font-size: 1.3rem;
+  }
+  .reply-form-container {
+    padding: 0.6rem;
+  }
+  .reply-form-title {
+    font-size: 0.8rem;
+  }
+  .comment-replies {
+    padding-left: 0.75rem;
+  }
+  .comments-list .comment-item,
+  .comment-replies .comment-item {
+    padding: 0.5rem;
+  }
+  .btn-primary-themed.btn-sm,
+  .reply-form .btn-sm {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .btn-secondary-themed.btn-sm {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
   }
 }
